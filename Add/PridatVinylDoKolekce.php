@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'DBPropojeni.php';
+include '../DBPropojeni.php';
 
 
 $sql = "SELECT * FROM vinyl";

@@ -2,17 +2,18 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header("Location: Autentikace.php");
+    header("Location: ../Auth/Autentikace.php");
     exit();
 }
 
 if ($_SESSION['role'] != 'admin') {
-    header("Location: OblibeneVinyly.php");
+    header("Location: ../Dashboard/OblibeneVinyly.php");
     exit();
 }
 
-include 'Header.php';
-include 'DBPropojeni.php';
+include '../components/Header.php';
+
+include '../components/DBPropojeni.php';
 
 $sql = "SELECT * FROM user";
 $result = $conn->query($sql);
@@ -59,8 +60,8 @@ $result = $conn->query($sql);
                         echo "<td>" . $row["prijmeni"] . "</td>";
                         echo "<td>" . $row["email"] . "</td>";
                         echo "<td>" . $row["role"] . "</td>";
-                        echo "<td><a href='EditovatUzivatele.php?id=" . $row['userid'] . "' class='btn btn-primary btn-sm'>Editovat</a> 
-                                <a href='SmazatUzivatele.php?id=" . $row['userid'] . "' class='btn btn-danger btn-sm'>Smazat</a></td>";
+                        echo "<td><a href='../Edit/EditovatUzivatele.php?id=" . $row['userid'] . "' class='btn btn-primary btn-sm'>Editovat</a> 
+                                <a href='../Edit/SmazatUzivatele.php?id=" . $row['userid'] . "' class='btn btn-danger btn-sm'>Smazat</a></td>";
                         echo "</tr>";
                     }
                 } else {

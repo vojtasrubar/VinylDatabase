@@ -2,19 +2,18 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header("Location: Autentikace.php");
+    header("Location: ../Auth/Autentikace.php");
     exit();
 }
 
 if ($_SESSION['role'] != 'admin') {
-    header("Location: OblibeneVinyly.php");
+    header("Location: ../Dashboard/OblibeneVinyly.php");
     exit();
 }
 
-include 'Header.php';
+include '../components/Header.php';
 
-include 'DBPropojeni.php';
-
+include '../components/DBPropojeni.php';
 
 $genre = '';
 $genre_err = '';
@@ -43,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             if ($stmt->execute()) {
                 
-                header("location: AdminDashboard.php");
+                header("location: ../Dashboard/AdminDashboard.php");
                 exit();
             } else {
                 echo "Ups! Něco se pokazilo. Zkuste to prosím později.";

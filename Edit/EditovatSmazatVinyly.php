@@ -2,12 +2,13 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header("Location: Autentikace.php");
+    header("Location: ../Auth/Autentikace.php");
     exit();
 }
 
-include 'Header.php';
-include 'DBPropojeni.php';
+include '../components/Header.php';
+
+include '../components/DBPropojeni.php';
 
 
 $sql = "SELECT vinyl.idvinyl, vinyl.nazev, vinyl.umelec, vinyl.DatumVydani, zanr.NazevZanru FROM vinyl
@@ -54,8 +55,8 @@ $result = $conn->query($sql);
                         echo "<td>" . $row["umelec"] . "</td>";
                         echo "<td>" . $row["DatumVydani"] . "</td>";
                         echo "<td>" . $row["NazevZanru"] . "</td>";
-                        echo "<td><a href='EditovatVinyl.php?id=" . $row['idvinyl'] . "' class='btn btn-primary btn-sm'>Editovat</a> 
-                                <a href='SmazatVinyl.php?id=" . $row['idvinyl'] . "' class='btn btn-danger btn-sm'>Smazat</a></td>";
+                        echo "<td><a href='../Edit/EditovatVinyl.php?id=" . $row['idvinyl'] . "' class='btn btn-primary btn-sm'>Editovat</a> 
+                                <a href='../Edit/SmazatVinyl.php?id=" . $row['idvinyl'] . "' class='btn btn-danger btn-sm'>Smazat</a></td>";
                         echo "</tr>";
                     }
                 } else {

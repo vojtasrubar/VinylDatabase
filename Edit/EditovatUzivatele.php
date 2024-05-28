@@ -2,17 +2,18 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header("Location: Autentikace.php");
+    header("Location: ../Auth/Autentikace.php");
     exit();
 }
 
 if ($_SESSION['role'] != 'admin') {
-    header("Location: OblibeneVinyly.php");
+    header("Location: ../Dashboard/OblibeneVinyly.php");
     exit();
 }
 
-include 'Header.php';
-include 'DBPropojeni.php';
+include '../components/Header.php';
+
+include '../components/DBPropojeni.php';
 
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     echo "Invalid request";

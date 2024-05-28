@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['username'])) {
-    header("Location: OblibeneVinyly.php");
+    header("Location: ../Dashboard/OblibeneVinyly.php");
     exit();
 }
 
@@ -31,9 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['userid'] = $row['userid'];
         $_SESSION['role'] = $row['role'];
         if ($row['role'] == 'admin') {
-            header("Location: AdminDashboard.php");
+            header("Location: ../Dashboard/AdminDashboard.php");
         } else {
-            header("Location: UserDashboard.php");
+            header("Location: ../Dashboard/UserDashboard.php");
         }
         exit();
     } else {

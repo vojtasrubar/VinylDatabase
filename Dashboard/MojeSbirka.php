@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'DBPropojeni.php';
+include '../components/DBPropojeni.php';
 
 $user_id = $_SESSION['userid'];
 $sql = "SELECT vinyl.nazev, vinyl.umelec FROM vinyluzivatele JOIN vinyl ON vinyluzivatele.vinyl_idvinyl = vinyl.idvinyl WHERE vinyluzivatele.user_id = $user_id";

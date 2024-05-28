@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['username'])) {
-    header("Location: UserDashboard.php");
+    header("Location: ../Dashboard/UserDashboard.php");
     exit();
 }
 
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($conn->query($sql) === TRUE) {
             $_SESSION['username'] = $username;
             $_SESSION['role'] = $role; 
-            header("Location: UserDashboard.php");
+            header("Location: ../Dashboard/UserDashboard.php");
             exit();
         } else {
             $error = "Error: " . $sql . "<br>" . $conn->error;

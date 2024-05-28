@@ -3,7 +3,7 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['username']) || $_SESSION['role'] != 'user') {
-    header("Location: VstupniStranka.php");
+    header("Location: ../VstupniStranka.php");
     exit();
 }
 ?>
@@ -26,7 +26,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'user') {
     </style>
 </head>
 <body>
-    <?php include 'Header.php'; ?>
+    <?php include '../components/Header.php'; ?>
 
     <div class="container">
         <h2>Uživatelský dashboard</h2>

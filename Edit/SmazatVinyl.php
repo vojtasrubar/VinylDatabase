@@ -2,17 +2,11 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header("Location: Autentikace.php");
+    header("Location: ../Auth/Autentikace.php");
     exit();
 }
 
-if ($_SESSION['role'] != 'admin') {
-    header("Location: OblibeneVinyly.php");
-    exit();
-}
-
-include 'DBPropojeni.php';
-
+include '../components/DBPropojeni.php';
 
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     echo "Invalid request";
@@ -21,19 +15,17 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 
 $id = $_GET['id'];
 
-
-$sql_delete = "DELETE FROM user WHERE userid = ?";
+$sql_delete = "DELETE FROM vinyl WHERE idvinyl = ?";
 $stmt_delete = $conn->prepare($sql_delete);
 $stmt_delete->bind_param("i", $id);
 $stmt_delete->execute();
 
 if ($stmt_delete->affected_rows > 0) {
-    header("Location: ZobrazitUzivatele.php");
+    header("Location: ../Edit/EditovatSmazatVinyly.php");
     exit();
 } else {
-    echo "Error deleting user";
+    echo "Error deleting vinyl";
 }
-
 
 $stmt_delete->close();
 $conn->close();

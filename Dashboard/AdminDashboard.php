@@ -4,10 +4,10 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['username']) || $_SESSION['role'] != 'admin') {
-    header("Location: Autentikace.php");
+    header("Location: ../Auth/Autentikace.php");
     exit();
 }
-include 'Header.php';
+include '../components/Header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
