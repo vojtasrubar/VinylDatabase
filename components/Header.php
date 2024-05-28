@@ -14,7 +14,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <ul class="navbar-nav">
             <?php if(isset($_SESSION['username'])) { ?>
             <li class="nav-item">
-                <a class="nav-link" href="OblibeneVinyly.php">Moje vinyly</a>
+                <a class="nav-link" href="MojeSbirka.php">Moje vinyly</a>
             </li>
             <?php if($_SESSION['role'] == 'admin') { ?>
             <li class="nav-item">

@@ -36,7 +36,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'user') {
                     <div class="card-body">
                         <h5 class="card-title">Přidat nový vinyl do kolekce</h5>
                         <p class="card-text">Přidat nový vinyl do kolekce.</p>
-                        <a href="PridatVinylDoKolekce.php" class="btn btn-primary">Přidat vinyl</a>
+                        <a href="../Add/PridatVinylDoKolekce.php" class="btn btn-primary">Přidat vinyl</a>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'user') {
                     <div class="card-body">
                         <h5 class="card-title">Zobrazit kolekci</h5>
                         <p class="card-text">Zobrazit všechny vinyly z kolekce.</p>
-                        <a href="MojeSbirka.php" class="btn btn-primary">Zobrazit kolekci</a>
+                        <a href="../Dashboard/MojeSbirka.php" class="btn btn-primary">Zobrazit kolekci</a>
                     </div>
                 </div>
             </div>

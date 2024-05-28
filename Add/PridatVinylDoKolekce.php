@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include '../DBPropojeni.php';
+include '../components/DBPropojeni.php';
 
 
 $sql = "SELECT * FROM vinyl";
@@ -64,7 +64,7 @@ $conn->close();
             <?php endforeach; ?>
         </div>
         <div class="text-center">
-            <a href="UserDashboard.php" class="btn btn-secondary">Return</a>
+            <a href="../Dashboard/UserDashboard.php" class="btn btn-secondary">Return</a>
         </div>
     </div>
 
