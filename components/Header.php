@@ -14,26 +14,26 @@ if (session_status() == PHP_SESSION_NONE) {
         <ul class="navbar-nav">
             <?php if(isset($_SESSION['username'])) { ?>
             <li class="nav-item">
-                <a class="nav-link" href="MojeSbirka.php">Moje vinyly</a>
+                <a class="nav-link" href="../Dashboard/MojeSbirka.php">Moje vinyly</a>
             </li>
             <?php if($_SESSION['role'] == 'admin') { ?>
             <li class="nav-item">
-                <a class="nav-link" href="AdminDashboard.php">Admin Dashboard</a>
+                <a class="nav-link" href="../Dashboard/AdminDashboard.php">Admin Dashboard</a>
             </li>
             <?php } else { ?>
             <li class="nav-item">
-                <a class="nav-link" href="UserDashboard.php">Uživatelský Dashboard</a>
+                <a class="nav-link" href="../Dashboard/UserDashboard.php">Uživatelský Dashboard</a>
             </li>
             <?php } ?>
             <li class="nav-item">
-                <a class="nav-link btn btn-danger text-light" href="LogOut.php">Logout</a>
+                <a class="nav-link btn btn-danger text-light" href="../Auth/LogOut.php">Logout</a>
             </li>
             <?php } else { ?>
             <li class="nav-item">
-                <a class="nav-link" href="Autentikace.php">Login</a>
+                <a class="nav-link" href="../Auth/Autentikace.php">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Registrace.php">Registrovat</a>
+                <a class="nav-link" href="../Auth/Registrace.php">Registrovat</a>
             </li>
             <?php } ?>
         </ul>

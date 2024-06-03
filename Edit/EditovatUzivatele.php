@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_update->execute();
 
     if ($stmt_update->affected_rows > 0) {
-        header("Location: ZobrazitUzivatele.php");
+        header("Location: ../Dashboard/ZobrazitUzivatele.php");
         exit();
     } else {
         echo "Error updating user";

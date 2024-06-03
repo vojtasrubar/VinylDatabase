@@ -36,8 +36,8 @@ if (isset($_SESSION['username'])) {
                         <h2 class="card-title">Vítejte ve vinylové kolekci</h2>
                         <p class="card-text">Vyberte akci:</p>
                         <div class="d-flex justify-content-between">
-                            <a href="../Auth/Autentikace.php" class="btn btn-primary">Přihlásit se</a>
-                            <a href="../Auth/Registrace.php" class="btn btn-success">Registrace</a>
+                            <a href="./Auth/Autentikace.php" class="btn btn-primary">Přihlásit se</a>
+                            <a href="./Auth/Registrace.php" class="btn btn-success">Registrace</a>
                         </div>
                     </div>
                 </div>

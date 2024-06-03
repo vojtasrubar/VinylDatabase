@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <?php echo $error; ?>
                         </div>
                         <?php } ?>
-                        <form action="Autentikace.php" method="post">
+                        <form action="../Auth/Autentikace.php" method="post">
                             <div class="form-group">
                                 <label for="username">Username:</label>
                                 <input type="text" name="username" class="form-control" required>
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <input type="password" name="heslo" class="form-control" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Přihlásit se</button>
-                            <a href="VstupniStranka.php" class="btn btn-secondary">Vrátit se</a>
+                            <a href="../VstupniStranka.php" class="btn btn-secondary">Vrátit se</a>
                         </form>
                     </div>
                 </div>

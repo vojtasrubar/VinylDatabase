@@ -36,7 +36,7 @@ include '../components/Header.php';
                     <div class="card-body">
                         <h5 class="card-title">Zobrazit/Editovat/Smazat uživatele</h5>
                         <p class="card-text">Zobrazit, Editovat a smazat existující uživatele.</p>
-                        <a href="ZobrazitUzivatele.php" class="btn btn-primary">Zobrazit</a>
+                        <a href="./ZobrazitUzivatele.php" class="btn btn-primary">Zobrazit</a>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@ include '../components/Header.php';
                     <div class="card-body">
                         <h5 class="card-title">Zobrazit/Editovat/Smazat Vinyl</h5>
                         <p class="card-text">Zobrazit, Editovat a smazat existující vinyl.</p>
-                        <a href="EditovatSmazatVinyly.php" class="btn btn-primary">Zobrazit</a>
+                        <a href="../Edit/EditovatSmazatVinyly.php" class="btn btn-primary">Zobrazit</a>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ include '../components/Header.php';
                     <div class="card-body">
                         <h5 class="card-title">Přidat žánr</h5>
                         <p class="card-text">Přidejte nový žánr.</p>
-                        <a href="PridatZanr.php" class="btn btn-primary mb-3">Přidat žánr</a>
+                        <a href="../Add/PridatZanr.php" class="btn btn-primary mb-3">Přidat žánr</a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@ include '../components/Header.php';
                     <div class="card-body">
                         <h5 class="card-title">Přidat vinyl</h5>
                         <p class="card-text">Přidat nový vinyl do databáze.</p>
-                        <a href="PridatVinyly.php" class="btn btn-primary">Přidat vinyl</a>
+                        <a href="../Add/PridatVinyly.php" class="btn btn-primary">Přidat vinyl</a>
                     </div>
                 </div>
             </div>
