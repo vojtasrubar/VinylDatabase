@@ -71,8 +71,17 @@ include '../components/Header.php';
             </div>
         </div>
         <div class="row mt-4">
-        </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Úprava struktury databáze</h5>
+                        <p class="card-text">Provede změny v databázi – přidání/sloupce, změna, FK.</p>
+                        <a href="../Edit/UpravaStrukturyDatabaze.php" class="btn btn-primary mb-3">Upravit strukturu DB</a>
+                    </div>
+                </div>
+            </div>
     </div>
+    
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

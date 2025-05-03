@@ -42,7 +42,7 @@ $conn->close();
             <?php endforeach; ?>
         </ul>
         <div class="text-center">
-            <a href="UserDashboard.php" class="btn btn-secondary">Return</a>
+            <a href="./UserDashboard.php" class="btn btn-secondary">Return</a>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
