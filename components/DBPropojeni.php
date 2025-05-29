@@ -1,9 +1,9 @@
 <?php
 class Database {
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $database = "vinyldatabase";
+    private $servername = "sql112.infinityfree.com";
+    private $username = "if0_39112415";
+    private $password = "tqMybSA7gTBC5s";
+    private $database = "if0_39112415_vinyldatabase";
     private $conn;
 
     public function __construct() {
