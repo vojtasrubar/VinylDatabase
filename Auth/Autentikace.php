@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <input type="password" name="heslo" class="form-control" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Přihlásit se</button>
-                            <a href="../VstupniStranka.php" class="btn btn-secondary">Vrátit se</a>
+                            <a href="../index.php" class="btn btn-secondary">Vrátit se</a>
                         </form>
                     </div>
                 </div>

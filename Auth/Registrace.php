@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Registrovat se</button>
-                            <a href="../VstupniStranka.php" class="btn btn-secondary btn-block mt-2">Vrátit se</a>
+                            <a href="../index.php" class="btn btn-secondary btn-block mt-2">Vrátit se</a>
                         </form>
                     </div>
                 </div>
