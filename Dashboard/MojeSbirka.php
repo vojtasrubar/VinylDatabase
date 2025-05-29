@@ -1,7 +1,15 @@
 <?php
 session_start();
 
-include '../components/DBPropojeni.php';
+
+require_once '../components/DBPropojeni.php';
+
+$db = new Database();
+$conn = $db->getConnection();
+
+$sql = "SELECT * FROM user";
+$result = $conn->query($sql);
+
 include '../components/Header.php';
 
 $user_id = $_SESSION['userid'];
@@ -41,9 +49,6 @@ $conn->close();
                 <li class="list-group-item"><?php echo $vinyl['nazev'] . ' - ' . $vinyl['umelec']; ?></li>
             <?php endforeach; ?>
         </ul>
-        <div class="text-center">
-            <a href="./UserDashboard.php" class="btn btn-secondary">Return</a>
-        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

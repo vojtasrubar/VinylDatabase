@@ -1,13 +1,22 @@
 <?php
 session_start();
 
+
+
+require_once '../components/DBPropojeni.php';
+
+$db = new Database();
+$conn = $db->getConnection();
+
+$sql = "SELECT * FROM user";
+$result = $conn->query($sql);
+
 if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../Auth/Autentikace.php");
     exit();
 }
 
 include '../components/Header.php';
-include '../components/DBPropojeni.php';
 
 $message = '';
 

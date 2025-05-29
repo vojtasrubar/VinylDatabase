@@ -1,9 +1,12 @@
 <?php
 session_start();
+require_once '../components/DBPropojeni.php';
 
-include '../components/DBPropojeni.php';
+$db = new Database();
+$conn = $db->getConnection();
 
-
+$sql = "SELECT * FROM user";
+$result = $conn->query($sql);
 $sql = "SELECT * FROM vinyl";
 $result = $conn->query($sql);
 
@@ -56,7 +59,7 @@ $conn->close();
                         <p class="card-text"><?php echo $vinyl['umelec']; ?></p>
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                             <input type="hidden" name="vinyl_id" value="<?php echo $vinyl['idvinyl']; ?>">
-                            <button type="submit" name="add_to_collection" class="btn btn-primary btn-sm">Add to Collection</button>
+                            <button type="submit" name="add_to_collection" class="btn btn-primary btn-sm">Pridat Do Kolekce</button>
                         </form>
                     </div>
                 </div>

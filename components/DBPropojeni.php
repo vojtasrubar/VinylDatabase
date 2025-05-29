@@ -1,17 +1,35 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "vinyldatabase"; 
+class Database {
+    private $servername = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $database = "vinyldatabase";
+    private $conn;
 
+    public function __construct() {
+        $this->conn = new mysqli(
+            $this->servername, 
+            $this->username, 
+            $this->password, 
+            $this->database
+        );
 
-$conn = new mysqli($servername, $username, $password, $database);
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
+        }
 
+        // Nastavení UTF-8 znakové sady
+        $this->conn->set_charset("utf8");
+    }
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    public function getConnection() {
+        return $this->conn;
+    }
+
+    public function closeConnection() {
+        if ($this->conn) {
+            $this->conn->close();
+        }
+    }
 }
-
-$conn->set_charset("utf8");
-
 ?>

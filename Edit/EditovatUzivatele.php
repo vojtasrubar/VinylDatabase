@@ -1,6 +1,15 @@
 <?php
 session_start();
 
+
+require_once '../components/DBPropojeni.php';
+
+$db = new Database();
+$conn = $db->getConnection();
+
+$sql = "SELECT * FROM user";
+$result = $conn->query($sql);
+
 if (!isset($_SESSION['username'])) {
     header("Location: ../Auth/Autentikace.php");
     exit();
@@ -13,7 +22,6 @@ if ($_SESSION['role'] != 'admin') {
 
 include '../components/Header.php';
 
-include '../components/DBPropojeni.php';
 
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     echo "Invalid request";
