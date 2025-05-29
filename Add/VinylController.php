@@ -92,10 +92,6 @@ class VinylController {
                                     </select>
                                     <span class="invalid-feedback"><?= $this->genreErr ?></span>
                                 </div>
-                                <div class="form-group">
-                                    <label for="image">Obrázek vinylu:</label>
-                                    <input type="file" name="image" class="form-control-file">
-                                </div>
                                 <button type="submit" class="btn btn-primary">Přidat Vinyl</button>
                             </form>
                         </div>

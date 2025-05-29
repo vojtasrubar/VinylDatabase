@@ -7,7 +7,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'admin') {
     header("Location: ../Auth/Autentikace.php");
     exit();
 }
-include '../components/Header.php';
+include_once '../components/Header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
