@@ -26,20 +26,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $role = $_POST['role']; 
 
- 
     $check_sql = "SELECT * FROM user WHERE username='$username'";
     $check_result = $conn->query($check_sql);
 
     if ($check_result->num_rows > 0) {
         $error = "Username already exists.";
     } else {
-     
         $sql = "INSERT INTO user (username, heslo, jmeno, prijmeni, email, role) 
                 VALUES ('$username', '$passworduser', '$name', '$surname', '$email', '$role')";
         
         if ($conn->query($sql) === TRUE) {
             $_SESSION['username'] = $username;
             $_SESSION['role'] = $role; 
+            $_SESSION['userid'] = $conn->insert_id;  // Tady nastavujeme id nového uživatele do session
+
             header("Location: ../Dashboard/UserDashboard.php");
             exit();
         } else {
@@ -51,12 +51,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrace</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <style>
         body {
             background-color: #f8f9fa;
@@ -79,26 +79,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <form action="Registrace.php" method="post">
                             <div class="form-group">
                                 <label for="username">Username:</label>
-                                <input type="text" class="form-control" name="username" required>
+                                <input type="text" class="form-control" name="username" required />
                             </div>
                             <div class="form-group">
                                 <label for="password">Heslo:</label>
-                                <input type="password" class="form-control" name="password" required>
+                                <input type="password" class="form-control" name="password" required />
                             </div>
                             <div class="form-group">
                                 <label for="name">Jméno:</label>
-                                <input type="text" class="form-control" name="name" required>
+                                <input type="text" class="form-control" name="name" required />
                             </div>
                             <div class="form-group">
-                                <label for="surname">Přijemní:</label>
-                                <input type="text" class="form-control" name="surname" required>
+                                <label for="surname">Příjmení:</label>
+                                <input type="text" class="form-control" name="surname" required />
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" name="email" required>
+                                <input type="email" class="form-control" name="email" required />
                             </div>
                             <div class="form-group">
-                                <label for="role">Role</label>
+                                <label for="role">Role:</label>
                                 <select class="form-control" name="role">
                                     <option value="user">User</option>
                                     <option value="admin">Admin</option>
