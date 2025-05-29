@@ -8,10 +8,10 @@ if (isset($_SESSION['username'])) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Database connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "vinyldatabase";
+    $servername = "sql112.infinityfree.com";
+    $username = "if0_39112415";
+    $password = "tqMybSA7gTBC5s";
+    $database = "if0_39112415_vinyldatabase";
 
     $conn = new mysqli($servername, $username, $password, $database);
 
