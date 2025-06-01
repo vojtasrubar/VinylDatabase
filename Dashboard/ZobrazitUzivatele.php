@@ -85,6 +85,6 @@ $result = $conn->query($sql);
 </html>
 
 <?php
-// Close connection
+
 $conn->close();
 ?>

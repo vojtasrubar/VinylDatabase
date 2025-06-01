@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($conn->query($sql) === TRUE) {
             $_SESSION['username'] = $username;
             $_SESSION['role'] = $role; 
-            $_SESSION['userid'] = $conn->insert_id;  // Tady nastavujeme id nového uživatele do session
+            $_SESSION['userid'] = $conn->insert_id;  
 
             header("Location: ../Dashboard/UserDashboard.php");
             exit();
