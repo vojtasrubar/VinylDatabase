@@ -34,7 +34,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="vinylsBody">
-                                    <!-- Vinyls data will be loaded here -->
+                         
                                 </tbody>
                             </table>
                         </div>
@@ -50,14 +50,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // Example data, replace with actual data from PHP
+        
         var vinylsData = [
             { title: "Vinyl 1", artist: "Artist 1", release_year: 2021, genre_name: "Rock" },
             { title: "Vinyl 2", artist: "Artist 2", release_year: 2020, genre_name: "Pop" },
             { title: "Vinyl 3", artist: "Artist 3", release_year: 2019, genre_name: "Jazz" }
         ];
 
-        // Function to display vinyls data
+       
         function displayVinyls() {
             var vinylsBody = document.getElementById('vinylsBody');
             vinylsBody.innerHTML = '';
@@ -73,7 +73,7 @@
             });
         }
 
-        // Load vinyls data when the page is ready
+       
         window.onload = function() {
             displayVinyls();
         };

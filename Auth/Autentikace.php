@@ -7,7 +7,7 @@ if (isset($_SESSION['username'])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Database connection
+
     $servername = "sql112.infinityfree.com";
     $username = "if0_39112415";
     $password = "tqMybSA7gTBC5s";

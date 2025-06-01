@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_collection"])) 
     $user_id = $_SESSION['userid'];
     $vinyl_id = $_POST["vinyl_id"];
 
-    // Zkontroluj, jestli už vinyl není v kolekci
+
     $check_sql = "SELECT * FROM vinyluzivatele WHERE vinyl_idvinyl = ? AND user_id = ?";
     $check_stmt = $conn->prepare($check_sql);
     $check_stmt->bind_param("ii", $vinyl_id, $user_id);
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_collection"])) 
     $check_result = $check_stmt->get_result();
 
     if ($check_result->num_rows === 0) {
-        // Není tam, přidáme
+
         $sql = "INSERT INTO vinyluzivatele (vinyl_idvinyl, user_id) VALUES (?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ii", $vinyl_id, $user_id);

@@ -18,7 +18,7 @@ class Database {
             die("Connection failed: " . $this->conn->connect_error);
         }
 
-        // Nastavení UTF-8 znakové sady
+
         $this->conn->set_charset("utf8");
     }
 
